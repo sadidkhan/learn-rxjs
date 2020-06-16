@@ -4,17 +4,19 @@ module.exports = {
     entry: './src/index.ts',
     devtool: 'inline-source-map',
     module: {
-        rules: [{
-            test: /\.tsx?$/,
-            use: 'ts-loader',
-            exclude: /node_modules/,
-        }]
+      rules: [
+        {
+          test: /\.tsx?$/,
+          use: 'ts-loader',
+          exclude: /node_modules/
+        }
+      ]
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+      extensions: [ '.tsx', '.ts', '.js' ]
     },
     output: {
-        filename: 'bundles.js',
-        path: path.resolve(__dirname, 'dist')
+      filename: 'bundle.js',
+      path: path.resolve(__dirname, 'dist'),
     }
-}
+};
