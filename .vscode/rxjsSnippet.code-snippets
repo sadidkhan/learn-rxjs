@@ -15,4 +15,35 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
+
+	"Create Observable": {
+		"scope": "javascript,typescript",
+		"prefix": "observable",
+		"body": [
+			"const observable = new Observable(subscriber => {",
+			"\tsubscriber.next(1);",
+			"\tsubscriber.next(2);",
+			"\tsubscriber.next(3);",
+			"\tsetTimeout(() => { ",
+			"\t\tsubscriber.next(4);",
+			"\t\tsubscriber.complete();",
+			"\t}, 1000); ",
+			"});",
+			"$2"
+		],
+		"description": "create a observable using rxjs"
+	},
+	"Create Observer": {
+		"scope": "javascript,typescript",
+		"prefix": "observer",
+		"body": [
+			"observable.subscribe({",
+				"\tnext(x) { console.log('value ' + x); },",
+				"\terror(err) { console.error('error: ' + err); },",
+				"\tcomplete() { console.log('done'); }",
+			  "});",
+			"$2"
+		],
+		"description": "create a observer using rxjs"
+	}
 }
