@@ -33,7 +33,7 @@
 		],
 		"description": "create a observable using rxjs"
 	},
-	"Create Observer": {
+	"Create Observer with object next, error, complete": {
 		"scope": "javascript,typescript",
 		"prefix": "observer",
 		"body": [
@@ -42,6 +42,19 @@
 				"\terror(err) { console.error('error: ' + err); },",
 				"\tcomplete() { console.log('done'); }",
 			  "});",
+			"$2"
+		],
+		"description": "create a observer using rxjs"
+	},
+	"Create Observer": {
+		"scope": "javascript,typescript",
+		"prefix": "observershort",
+		"body": [
+			"observable.subscribe(",
+				"\t(x) => { console.log('value ' + x); },",
+				"\t(err) => { console.error('error: ' + err); },",
+				"\t() => { console.log('done'); }",
+			  ");",
 			"$2"
 		],
 		"description": "create a observer using rxjs"
